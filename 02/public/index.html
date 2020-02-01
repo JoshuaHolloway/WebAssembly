@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>WebAssembly Demo</title>
+</head>
+
+<body>
+  <h1>WebAssembly Demo</h1>
+  <script>
+
+    // Imports object
+    const imports = {
+      env: {
+        numLog: console.log,
+        strLog: console.log
+      }
+    }
+
+    // Load WASM
+    WebAssembly.instantiateStreaming(fetch('/program.wasm'), imports)
+      .then(wasm => {
+        console.log('WASM Ready.');
+
+        // Make the wasm object accessible
+        window.wasm = wasm
+
+        // // All exported
+        console.log('WebAssembly.Module.exports(wasm.module):');
+        console.log(WebAssembly.Module.exports(wasm.module));
+
+
+        // console.log('instance.exports.getDoubleNumber(80):');
+        // console.log(wasm.instance.exports.getDoubleNumber(33));
+
+        // // All imported
+        console.log('WebAssembly.Module.imports(wasm.module):');
+        console.log(WebAssembly.Module.imports(wasm.module));
+
+        // Call function (logs out position of string)
+        console.log('wasm.instance.exports.greet():');
+        console.log(wasm.instance.exports.greet());
+      })
+  </script>
+</body>
+
+</html>
