@@ -2,14 +2,19 @@ https://wasdk.github.io/WasmFiddle/
 ===================================
 C:
 
-void consoleLog(int n);
+void numLog(int n);
+void stringLog(char * msg);
 
 int main() { 
   return 42;
 }
 
+void greet() {
+  strLog("Hello from C!");
+}
+
 void getDoubleNumber(int x) {
-  consoleLog( x * 2 );
+  numLog( x * 2 );
 }
 
 ===================================

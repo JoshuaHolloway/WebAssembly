@@ -26,22 +26,16 @@
         // Make the wasm object accessible
         window.wasm = wasm
 
-        // // All exported
-        console.log('WebAssembly.Module.exports(wasm.module):');
-        console.log(WebAssembly.Module.exports(wasm.module));
+        console.log('All Exports:');
+        console.log(wasm.instance.exports);
 
-
-        // console.log('instance.exports.getDoubleNumber(80):');
-        // console.log(wasm.instance.exports.getDoubleNumber(33));
-
-        // // All imported
-        console.log('WebAssembly.Module.imports(wasm.module):');
+        console.log('All Imports:');
         console.log(WebAssembly.Module.imports(wasm.module));
 
         // Call function (logs out position of string)
         console.log('wasm.instance.exports.greet():');
         console.log(wasm.instance.exports.greet());
-      })
+      });
   </script>
 </body>
 
