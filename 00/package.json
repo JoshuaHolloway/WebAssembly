@@ -6,9 +6,10 @@
   "author": "Ray Viljoen <ray@stackacademy.tv>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "nodemon": "^2.0.2"
   }
 }
