@@ -18,27 +18,20 @@
         window.wasm = wasm
 
         // Log out all exports
-        console.log('WebAssembly:');
+        console.log('WebAssembly Object:');
         console.log(WebAssembly);
 
-        console.log('WebAssembly.Module:');
-        console.log(WebAssembly.Module);
+        // Exports
+        console.log('All Exports:');
+        console.log(wasm.instance.exports);
 
-        console.log('WebAssembly.Module.exports:');
-        console.log(WebAssembly.Module.exports);
-
-        console.log('WebAssembly.Module.exports(wasm.module):');
+        // Imports:
+        console.log('All Imports:');
         console.log(WebAssembly.Module.exports(wasm.module));
 
-        console.log('wasm:');
-        console.log(wasm);
-
-        //console.log('instance.exports.getNumber():');
-        //console.log(wasm.instance.exports.getNumber());
-
-        // Log out all exported functions
-        console.log('instance.exports.getDoubleNumber(80):');
-        console.log(wasm.instance.exports.getDoubleNumber(80));
+        // Execute compiled function
+        // console.log('instance.exports.getDoubleNumber(80):');
+        // console.log(wasm.instance.exports.getDoubleNumber(80));
 
       })
   </script>
