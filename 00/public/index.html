@@ -19,7 +19,7 @@
 
         // Log out all exported functions
         console.log('All exported functions:');
-        console.log(wasm.instance.exports);
+        console.log(WebAssembly.Module.exports(wasm.module));
 
         // Run compiled function
         console.log('wasm.instance.exports.getDoubleNumber(80)');
