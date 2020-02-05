@@ -6,8 +6,10 @@
     * 02: Memory Access: Reading Strings
     * 03: Custom Memory Imports
     
-
+***************
 * 1: Emscripten
-    * 00: 
+    * 10: Compiling to WASM via Emscripten
+***************
+
 * 2: Practical WebAssembly
     * 00: 
