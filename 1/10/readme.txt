@@ -1,72 +1,26 @@
-https://wasdk.github.io/WasmFiddle/
-===================================
-C:
 
-main.c
+[10]:
+-Created lib/demo.c
+-Running below will create demo.js and demo.wasm
 
-===================================
-JS:
+> emcc lib/demo.c -s WASM=1 -o public/demo.js
 
-var wasmModule = new WebAssembly.Module(wasmCode);
-var wasmInstance = new WebAssembly.Instance(wasmModule, wasmImports);
-log(wasmInstance.exports.main());
+-See 1-10.png
 
-===================================
+-demo.js is the glue code to run demo.wasm.
 
-Generated Text:
+-Link the Emscrypten JavaScript by adding a src tag
+ in the index.html file (public/index.html)
 
-(module
- (type $FUNCSIG$i (func (result i32)))
- (type $FUNCSIG$vi (func (param i32)))
- (type $FUNCSIG$iii (func (param i32 i32) (result i32)))
- (import "env" "numLog" (func $numLog (param i32)))
- (import "env" "strLog" (func $strLog (param i32 i32) (result i32)))
- (table 0 anyfunc)
- (memory $0 1)
- (data (i32.const 16) "Hello from C!\00")
- (export "memory" (memory $0))
- (export "main" (func $main))
- (export "greet" (func $greet))
- (export "getDoubleNumber" (func $getDoubleNumber))
- (func $main (; 2 ;) (result i32)
-  (i32.const 42)
- )
- (func $greet (; 3 ;)
-  (drop
-   (call $strLog
-    (i32.const 16)
-    (i32.const 13)
-   )
-  )
- )
- (func $getDoubleNumber (; 4 ;) (param $0 i32)
-  (call $numLog
-   (i32.shl
-    (get_local $0)
-    (i32.const 1)
-   )
-  )
- )
-)
+-Create index.html in /public:
 
-===================================
+ <html>
+    <head></head>
+    <body>
+        <h1>Using Emscrypten</h1>
+        <script src="demo.js"></script>
+    </body>
+ </html>
 
-Generated .WASM:
-
-public/program.wasm
-
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//////////////////////////////////
-
-https://webassembly.studio/
-===================================
-
-Modified .WAT:
-
-main.wasm
-===================================
-
-Generated .WASM:
-
-public/main.wasm
-===================================
+-Run the server: 
+npm start
