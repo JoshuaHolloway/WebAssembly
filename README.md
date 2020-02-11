@@ -12,9 +12,10 @@
     * 11: Compilation Options (part-1: Boilerplate HTML)
         * Compile with accompanying wasm/loading script and HTML playground page
     * 12: Compilation Options (part-2: Generate WASM with no extras)
+    * 13: Compilation Options (Part 3: Compiler-Optimization Flags)
     
     ******************************************
-    * 13: Compilation Options (Part 3: Compiler-Optimization Flags)
+    * 14: Compilation Options (Part 4: Prepend (or append) our own additional JS to the generated Emscripten JS file)
     ******************************************
 
 * 2: Practical WebAssembly
