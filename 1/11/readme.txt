@@ -1,4 +1,4 @@
-11: Compilation Options [39:00]
+11: Compilation Options (Part 1: Compile with accomanying wasm/loading script and HTML playground page)
 
 -Now that we know how to compile basic wasm with accompanying JavaScript loading code,
  let's explore the Emscrypten compiler a bit further and see how to customize
