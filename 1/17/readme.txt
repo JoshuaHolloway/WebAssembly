@@ -101,7 +101,7 @@ compiler command:
 _getDoubleNum(5)
 
 ====================================
-17: Exporting C-function to JS via Emsripten (Part-3: Array ags)
+17: Exporting C-function to JS via Emsripten (Part-3: Return array)
 
 -Use Emscriptens ccall function like this:
 > ccall('getNum')
