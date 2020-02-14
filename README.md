@@ -13,10 +13,15 @@
         * Compile with accompanying wasm/loading script and HTML playground page
     * 12: Compilation Options (part-2: Generate WASM with no extras)
     * 13: Compilation Options (Part 3: Compiler-Optimization Flags)
+    * 14: Compilation Options (Part 4: Prepend (or append) our own additional JS to the generated Emscripten JS file)
     
     ******************************************
-    * 14: Compilation Options (Part 4: Prepend (or append) our own additional JS to the generated Emscripten JS file)
+    * 15: Exporting C-function to JS via Emsripten (Part-1: Basic call)
+    * 16: Exporting C-function to JS via Emsripten (Part-2: Scalar arg)
+    * 17: Exporting C-function to JS via Emsripten (Part-3: Return array)
+    * 18: Exporting C-function to JS via Emsripten (Part-4: Array arg)
     ******************************************
+    * 19: Exporting C-function to JS via Emsripten (Part-5: cwrap)
 
 * 2: Practical WebAssembly
     * 00: 
