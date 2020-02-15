@@ -21,7 +21,7 @@
     * 17: Exporting C-function to JS via Emsripten (Part-3: Return array)
     * 18: Exporting C-function to JS via Emsripten (Part-4: Array arg)
     ******************************************
-    * 19: Exporting C-function to JS via Emsripten (Part-5: cwrap)
+    * 19: Calling JS functions from C (Part-1)
 
 * 2: Practical WebAssembly
     * 00: 
