@@ -14,14 +14,19 @@
     * 12: Compilation Options (part-2: Generate WASM with no extras)
     * 13: Compilation Options (Part 3: Compiler-Optimization Flags)
     * 14: Compilation Options (Part 4: Prepend (or append) our own additional JS to the generated Emscripten JS file)
-    
-    ******************************************
     * 15: Exporting C-function to JS via Emsripten (Part-1: Basic call)
     * 16: Exporting C-function to JS via Emsripten (Part-2: Scalar arg)
     * 17: Exporting C-function to JS via Emsripten (Part-3: Return array)
     * 18: Exporting C-function to JS via Emsripten (Part-4: Array arg)
+    
     ******************************************
-    * 19: Calling JS functions from C (Part-1)
+    * 19: Calling JS functions from C (Part-1: Hello)
+    ******************************************
+    
 
 * 2: Practical WebAssembly
     * 00: 
+
+
+* 3: Doing (Almost) Real Stuff
+    * 300: Pass int array JS -> C

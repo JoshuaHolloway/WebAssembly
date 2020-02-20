@@ -14,4 +14,4 @@ app.use(express.static('public', {
 }));
 
 // Start server
-app.listen(2222, () => console.log('http://localhost:2222'));
+app.listen(3000, () => console.log('http://localhost:3000'))

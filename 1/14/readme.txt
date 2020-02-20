@@ -63,7 +63,7 @@ total 39K
 -Note the massive reduction in size of demo.js and demo.wasm
 
 ====================================
-14: Compilation Options (Part 4: )
+14: Compilation Options (Part 4: Prepend (or append) our own additional JS to the generated Emscripten JS file)
 
 -We can use the JavaScript Closure compiler with the flag --closure
 -This requires Java to be installed though :(

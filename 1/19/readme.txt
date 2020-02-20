@@ -171,7 +171,7 @@ char * greet2( char * name ) {
 
 ====================================
 
-19: Calling JS functions from C (Part-1)
+19: Calling JS functions from C (Part-1: Hello)
 
 -Emscripted doesn't import JS-functions to the WASM.
 -Instead Emscripten uses a few helper functions from the  

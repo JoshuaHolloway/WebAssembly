@@ -1,0 +1,1 @@
+emcc public/source/add.c -s EXTRA_EXPORTED_RUNTIME_METHODS=['ccall','cwrap'] -o public/js_plumbing.js

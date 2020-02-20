@@ -26,3 +26,5 @@ int getNum() {
 int getDoubleNum(int n) {
     return n * 2;
 }
+
+// > emcc lib/demo.c -s WASM=1 -s EXPORTED_FUNCTIONS="['_getNum', '_main']" -o public/demo.js
