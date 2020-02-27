@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <input type="button" value="Add" onclick="callAdd()" />
+
+  <script>
+    // function callAdd() {
+    //   const result = Module.ccall('Add',
+    //     'number',
+    //     ['number', 'number'],
+    //     [1, 2]);
+    //
+    //   console.log(`Result: ${result}`);
+    // }
+
+    // function callAdd() {
+    //   const items = [5, 6, 3, 4];
+    //   const arrayLength = items.length;
+    //   const bytesPerElement = Module.HEAP32.BYTES_PER_ELEMENT;
+    //   const arrayPointer = Module._malloc((arrayLength * bytesPerElement));
+    //   Module.HEAP32.set(items, (arrayPointer / bytesPerElement));
+    //   const result = Module.ccall('Add',
+    //     null,
+    //     ['number', 'number'],
+    //     [arrayPointer, arrayLength]);
+    //   Module._free(arrayPointer);
+
+    //   console.log(Module.HEAP32.buffer);
+
+
+    //   const arrayData = []
+    //   for (let v = 0; v < items.length; v++) {
+    //     arrayData.push(
+    //       Module.HEAPF32[result / Module.HEAP32.BYTES_PER_ELEMENT + v]);
+    //   }
+    //   console.log(arrayData);
+    //}
+
+    function reqListener() {
+      // Loading wasm module
+      var arrayBuffer = oReq.response
+      WasmDsp['wasmBinary'] = arrayBuffer
+      wasmDsp = WasmDsp({ wasmBinary: WasmDsp.wasmBinary })
+
+      var inArray = new Int32Array([22, 44, 66, 999])
+      var nByte = 4
+      copyArray = wasmDsp.cwrap('copy_array', null, ['number', 'number']);
+
+      // Takes an Int32Array, copies it to the heap and returns a pointer
+      function arrayToPtr(array) {
+        var ptr = wasmDsp._malloc(array.length * nByte)
+        wasmDsp.HEAP32.set(array, ptr / nByte)
+        return ptr
+      }
+
+      // Takes a pointer and  array length, and returns a Int32Array from the heap
+      function ptrToArray(ptr, length) {
+        var array = new Int32Array(length)
+        var pos = ptr / nByte
+        array.set(wasmDsp.HEAP32.subarray(pos, pos + length))
+        return array
+      }
+
+      var copiedArray = ptrToArray(
+        copyArray(arrayToPtr(inArray), inArray.length)
+        , inArray.length)
+
+      console.log(copiedArray)
+    }
+
+    var oReq = new XMLHttpRequest();
+    oReq.responseType = "arraybuffer";
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", "build/wasm_dsp.wasm");
+    oReq.send();
+
+  </script>
+  <script src="js_plumbing.js"></script>
+</body>
+
+</html>

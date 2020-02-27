@@ -30,3 +30,9 @@
 
 * 3: Doing (Almost) Real Stuff
     * 300: Pass int array JS -> C
+    * 301: Pass int array JS -> C and return
+
+* 4: Rust
+    * 400: Add
+    * 401: wasmCheckers
+    * 402: Hello WebAssembly in Rust
